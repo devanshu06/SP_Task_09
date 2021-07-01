@@ -1,5 +1,5 @@
 <html>
-<title>Docker Page</title>
+<title>Kubernetes Page</title>
 <head>
         <script>
                 function lw() {
@@ -7,7 +7,7 @@
 
                         var xhr = new XMLHttpRequest();
 
-                        xhr.open("GET", "http://192.168.106.10/cgi-bin/hy.py?x=" + i , true);
+                        xhr.open("GET", "http://<Your VM IP here >/cgi-bin/kube.py?x=" + i , true);
                         xhr.send();
 
                         xhr.onload = function() {
