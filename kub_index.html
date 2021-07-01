@@ -1,0 +1,53 @@
+<html>
+<title>Docker Page</title>
+<head>
+        <script>
+                function lw() {
+                        var i = document.getElementById("command").value
+
+                        var xhr = new XMLHttpRequest();
+
+                        xhr.open("GET", "http://192.168.106.10/cgi-bin/hy.py?x=" + i , true);
+                        xhr.send();
+
+                        xhr.onload = function() {
+                        var output = xhr.responseText;
+
+                        document.getElementById("output").innerHTML = output;
+                        }
+                }
+        </script>
+
+        <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+<div class="container">
+<centre>
+ <br>
+        <img src="https://res.cloudinary.com/gremlin/image/upload/t_default/1024px-kubernetes_logo.png" width="450" height="250">
+        <br>
+        <h1>Enter your Kubernetes Command</h1>
+        <input type="text" id='command' placeholder="Enter Here">
+        <br><br>
+        <button id="submit"  onclick = "lw()";>Submit</button>
+        <br><br>
+
+        <div id="output"> </div>
+
+</centre>
+</div>
+</body>
+</html>
+
+<!---
+<body>
+        <p>Enter your Command Here:</p>
+        <input type="text" id="in1">
+        <br>
+        <button onclick = "lw()";> Submit</button>
+        <pre>
+            <p id="p1"></p>
+        </pre>
+        </body>
+-->
